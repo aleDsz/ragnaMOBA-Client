@@ -1,0 +1,8 @@
+language: csharp
+solution: ./src/ragnaMOBA.Client.sln
+install:
+ - sudo apt-get install -y gtk-sharp2 nunit-console
+ - nuget restore ./src/ragnaMOBA.Client.sln
+script:
+ - xbuild ./src/ragnaMOBA.Client.sln
+ - nunit-console ./ragnaMOBA.Client.Tests/bin/Debug/ragnaMOBA.Client.Tests.dll
